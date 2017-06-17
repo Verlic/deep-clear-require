@@ -1,2 +1,3 @@
-# deep-clear-require
-Clears a required module from cache, including child references
+# Deep Clear Require
+
+Clears a required module from cache, including any child references.

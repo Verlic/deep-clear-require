@@ -1,12 +1,17 @@
 {
   "name": "deep-clear-require",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Clears a required module from cache, including any child references.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "test:watch": "mocha --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["require", "clear"],
+  "author": "Verlic",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
 }
