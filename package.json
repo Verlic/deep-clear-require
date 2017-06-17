@@ -1,6 +1,6 @@
 {
   "name": "deep-clear-require",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Clears a required module from cache, including any child references.",
   "main": "index.js",
   "scripts": {
