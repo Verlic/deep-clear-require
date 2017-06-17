@@ -1,9 +1,10 @@
-module.exports = (file) => {
-  var cacheItem = require.cache[require.resolve(file)];
+module.exports = function clear(file) {
+  var cacheItem = require.cache[file];
   if (!cacheItem) {
     return;
   }
 
-  cacheItem.children.forEach((child) => delete require.cache[child.id]);
+  console.log('CLEAR', cacheItem.children);
+  cacheItem.children.forEach((child) => clear(child.id));
   delete require.cache[require.resolve(file)];
 };
