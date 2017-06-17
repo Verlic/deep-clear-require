@@ -4,7 +4,6 @@ module.exports = function clear(file) {
     return;
   }
 
-  console.log('CLEAR', cacheItem.children);
   cacheItem.children.forEach((child) => clear(child.id));
   delete require.cache[require.resolve(file)];
 };
