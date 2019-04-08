@@ -48,4 +48,23 @@ describe('Clear Require', () => {
     assert.notEqual(a, c);
     assert.notEqual(b, c);
   });
+
+  describe('white listing', () => {
+    it('should not remove white listed external modules', () => {
+      require('./lib/module-with-external-dependency');
+
+      clear(require.resolve('./lib/module-with-external-dependency'), ['chai']);
+
+      assert.isDefined(require.cache[require.resolve('chai')]);
+    });
+
+    it('should ignore modules that are not external dependencies', () => {
+      require('./test2');
+
+      clear(require.resolve('./test2'), ['./lib/random']);
+
+      assert.isUndefined(require.cache[require.resolve('./lib/random')]);
+
+    })
+  })
 });
